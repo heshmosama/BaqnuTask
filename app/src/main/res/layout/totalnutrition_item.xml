@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.example.banquemisrtask.domain.entites.response.GEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_8dp"
+            android:text="@{model.label}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/tv_value_value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_value_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{model.quantity   model.unit}"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_label"
+            app:layout_constraintTop_toTopOf="@+id/tv_label"
+            tools:text="5" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="@dimen/dimens_8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="30dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

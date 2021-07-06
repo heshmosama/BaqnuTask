@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BanquMisrTask</string>
+    <string name="analyze">Analyze</string>
+    <string name="total_nutrition">Total Nutrition</string>
+    <string name="quantity">Quantity</string>
+    <string name="unit">Unit</string>
+    <string name="food">Food</string>
+    <string name="calories">Calories</string>
+    <string name="weight">Weight</string>
+    <string name="nutrition_facts">Nutrition Facts</string>
+
+
+</resources>

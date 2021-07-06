@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.example.banquemisrtask.domain.entites.response.IngredientEntity" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:layout_margin="@dimen/dimens_16dp"
+        app:cardCornerRadius="@dimen/dimens_8dp"
+        app:cardElevation="@dimen/dimens_8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dimens_16dp"
+                android:textAlignment="center"
+                android:text="@{model.text}"
+                android:textColor="@color/black"
+                tools:text="Cup Rice" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="409dp"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="47dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_qty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_16dp"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:text="@string/quantity"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tv_qty_value"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_qty_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_16dp"
+                android:layout_marginEnd="@dimen/dimens_16dp"
+                android:textAlignment="viewEnd"
+                android:text="@{model.qty}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_qty"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                tools:text="5" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_unit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_16dp"
+                android:layout_marginTop="@dimen/dimens_8dp"
+                android:text="@string/unit"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tv_qty_value"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_qty" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_unit_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimens_16dp"
+                android:textAlignment="viewEnd"
+                android:text="@{model.unit}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_qty"
+                app:layout_constraintTop_toTopOf="@+id/tv_unit"
+                tools:text="cup" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_food"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_16dp"
+                android:layout_marginTop="@dimen/dimens_8dp"
+                android:text="@string/food"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tv_qty_value"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_unit" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_food_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimens_16dp"
+                android:textAlignment="viewEnd"
+                android:text="@{model.food}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_qty"
+                app:layout_constraintTop_toTopOf="@+id/tv_food"
+                tools:text="rice" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_calories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_16dp"
+                android:layout_marginTop="@dimen/dimens_8dp"
+                android:text="@string/calories"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tv_qty_value"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_food" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_calories_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimens_16dp"
+                android:textAlignment="viewEnd"
+                android:text="@{model.calories}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_qty"
+                app:layout_constraintTop_toTopOf="@+id/tv_calories"
+                tools:text="702 kcal" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_weight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimens_16dp"
+                android:layout_marginTop="@dimen/dimens_8dp"
+                android:layout_marginBottom="@dimen/dimens_16dp"
+                android:text="@string/weight"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_qty_value"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_calories" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_weight_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimens_16dp"
+                android:textAlignment="viewEnd"
+                android:text="@{model.weight}"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_weight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_qty"
+                app:layout_constraintTop_toTopOf="@+id/tv_weight"
+                tools:text="195 g" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

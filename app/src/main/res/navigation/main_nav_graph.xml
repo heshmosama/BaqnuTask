@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.banquemisrtask.presentation.mainscreen.homescreen.HomeFragment"
+        android:label="Anlayze" >
+        <action
+            android:id="@+id/action_homeFragment_to_ingredientsFragment"
+            app:destination="@id/ingredientsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingredientsFragment"
+        android:name="com.example.banquemisrtask.presentation.mainscreen.ingredients.IngredientsFragment"
+        android:label="Ingredients" >
+        <action
+            android:id="@+id/action_ingredientsFragment_to_totalNutritionFragment"
+            app:destination="@id/totalNutritionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/totalNutritionFragment"
+        android:name="com.example.banquemisrtask.presentation.mainscreen.totalnutrition.TotalNutritionFragment"
+        android:label="TotalNutrition" />
+</navigation>

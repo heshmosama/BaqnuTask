@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="viewmodel"
+            type="com.example.banquemisrtask.presentation.mainscreen.SharedViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimens_16dp"
+            android:text="@string/nutrition_facts"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/dimens_48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            gEntitysList="@{viewmodel.response.totalNutrition.totalNutritionlist}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/dimens_16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:layout_editor_absoluteX="16dp"
+            tools:listitem="@layout/totalnutrition_item" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

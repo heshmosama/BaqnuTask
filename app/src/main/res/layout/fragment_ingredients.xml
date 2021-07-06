@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="viewmodel"
+            type="com.example.banquemisrtask.presentation.mainscreen.SharedViewModel" />
+     <variable
+            name="interations"
+            type="com.example.banquemisrtask.presentation.mainscreen.ingredients.IngredientInteractions" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            ingredientlist="@{viewmodel.response.ingredients}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/ingredients_item"
+            android:layout_margin="@dimen/dimens_16dp"
+            app:layout_constraintBottom_toTopOf="@+id/materialButton"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:padding="@dimen/dimens_8dp"
+            android:text="@string/total_nutrition"
+            android:textSize="@dimen/dimens_18sp"
+            android:onClick="@{()->interations.onTotalNutritionClick()}"
+            android:layout_marginBottom="@dimen/dimens_16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+            app:layout_constraintStart_toStartOf="@+id/recyclerView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
